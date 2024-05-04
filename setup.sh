@@ -1,3 +1,5 @@
+#!/bin/bash
+
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 clear
@@ -11,7 +13,7 @@ tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-
+# domain random
 CDN="https://raw.githubusercontent.com/RidwanzAnphelibelll/v6/main/ssh"
 cd /root
 if [ "${EUID}" -ne 0 ]; then
@@ -182,6 +184,7 @@ TEXT="Installasi Script By @RidwanzSaputra
 <code>LOCATION   :</code> <code>$CITY</code>
 <code>TIMEZONE   :</code> <code>$WKT</code>
 ====================================="
+"
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -235,7 +238,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/RidwanzAnphelibelll/v6/main/version  )
+serverV=$( curl -sS https://raw.githubusercontent.com//RidwanzAnphelibelll/v6/main/versions  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -246,8 +249,9 @@ else
 gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
+echo " "
+echo "=====================-[ RIDWANZ-VPN ]-===================="
 echo ""
-echo "===============-[ Script By @RidwanzSaputra ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
